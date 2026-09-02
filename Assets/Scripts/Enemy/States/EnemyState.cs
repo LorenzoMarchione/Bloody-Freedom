@@ -11,10 +11,10 @@ public abstract class EnemyState
     public EnemyState (Enemy enem)
     {
         enemy = enem;
-        rb = enem.GetComponent<Rigidbody>();
-        senses = enem.GetComponent<EnemySenses>();
-        config = enem.GetComponent<EnemyConfig>();
-        stateMachine = enem.GetComponent<EnemyStateMachine>();
+        rb = enem.RigidBody;
+        senses = enem.Senses;
+        config = enem.EnemyConfig;
+        stateMachine = enem.StateMachine;
     }
 
     public virtual void Enter() { }

@@ -1,16 +1,30 @@
 using UnityEngine;
 
-public class EnemyStateMachine : MonoBehaviour
+public class EnemyStateMachine
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private EnemyState currentState;
+    
+    public void ChangeState(EnemyState state)
     {
-        
+        if(currentState != null)
+            currentState.Exit();
+        currentState = state;
+        currentState.Enter();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void Initialize(EnemyState state)
     {
-        
+        ChangeState(state);
+    }
+    public void Update()
+    {
+        currentState.Update();
+    }
+    public void FixedUpdate()
+    {
+        currentState.FixedUpdate();
+    }
+    public void OnAnimationFinished()
+    {
+        currentState.OnAnimationFinished();
     }
 }

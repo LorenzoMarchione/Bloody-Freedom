@@ -1,16 +1,8 @@
 using UnityEngine;
 
-public class EnemyConfig : MonoBehaviour
+[CreateAssetMenu(menuName = "Enemies/Enemy Config")]
+public class EnemyConfig : ScriptableObject
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] private float walkSpeed = 10f;
+    public float WalkSpeed { get { return walkSpeed; } }
 }
