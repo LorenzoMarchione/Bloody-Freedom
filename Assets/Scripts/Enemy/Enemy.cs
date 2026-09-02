@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.Rendering.STP;
 
 public class Enemy : MonoBehaviour
 {
@@ -50,17 +51,34 @@ public class Enemy : MonoBehaviour
     {
         StateMachine.OnAnimationFinished();
     }
-    public Vector3 FaceTarget()
+    public Vector3 GetTargetDirection()
     {
         Vector3 direction = Player.transform.position - transform.position;
         direction.y = 0;
+        return direction.normalized;
+    }
+    public void FaceTarget()
+    {
+        Vector3 direction = GetTargetDirection();
         if(direction != Vector3.zero) 
             transform.rotation = Quaternion.LookRotation(direction);
-        return direction.normalized;
     }
     public void ChaseTarget(float speed) 
     { 
-        Vector3 direction = FaceTarget();
+        Vector3 direction = GetTargetDirection();
         RigidBody.linearVelocity = new Vector3 (direction.x * speed, RigidBody.linearVelocity.y, direction.z * speed);
+    }
+    public void StrafeTarget(float speed)
+    {
+        Vector3 rightDirection = Vector3.Cross(Vector3.up, GetTargetDirection());
+        RigidBody.linearVelocity = new Vector3(rightDirection.x * speed, RigidBody.linearVelocity.y, rightDirection.z * speed);
+    }
+
+    public void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, EnemyConfig.TargetDistance + EnemyConfig.DistanceRange);
+        Gizmos.color = Color.orange;
+        Gizmos.DrawWireSphere(transform.position, EnemyConfig.TargetDistance - EnemyConfig.DistanceRange);
     }
 }
