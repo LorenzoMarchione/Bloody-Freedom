@@ -1,5 +1,11 @@
 using UnityEngine;
 
+public enum TargetRangeStatus
+{
+    TooClose,
+    InRange,
+    TooFar
+}
 public class EnemySenses : MonoBehaviour
 {
     [SerializeField] private Enemy enemy;
@@ -15,19 +21,18 @@ public class EnemySenses : MonoBehaviour
     {
         return (player.position - transform.position).sqrMagnitude;
     }
-    public int TargetDirectionFromRange()
+    public TargetRangeStatus TargetRange(float distanceRange)
     {
-        float minDistance = config.TargetDistance - config.DistanceRange;
-        float maxDistance = config.TargetDistance + config.DistanceRange;
+        float minDistance = config.TargetDistance - distanceRange;
+        float maxDistance = config.TargetDistance + distanceRange;
 
         float sqrMinDistance = minDistance * minDistance;
         float sqrMaxDistance = maxDistance * maxDistance;
 
         float sqrDistanceFromTarget = GetSqrDistanceFromTarget();
-        if (sqrDistanceFromTarget < sqrMinDistance)
-            return -1;
-        else if(sqrDistanceFromTarget > sqrMaxDistance)
-            return 1;
-        return 0;
+
+        if (sqrDistanceFromTarget < sqrMinDistance) return TargetRangeStatus.TooClose;
+        if (sqrDistanceFromTarget > sqrMaxDistance  ) return TargetRangeStatus.TooFar;
+        return TargetRangeStatus.InRange;
     }
 }

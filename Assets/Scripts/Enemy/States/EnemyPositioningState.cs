@@ -25,7 +25,7 @@ public class EnemyPositioningState : EnemyState
         attackTimer -= Time.deltaTime;
         if (stanceTimer <= 0)
             ChooseNewStance();
-        if (senses.TargetDirectionFromRange() != 0)
+        if (senses.TargetRange(config.ExitDistanceRange) != TargetRangeStatus.InRange)
             stateMachine.ChangeState(enemy.ChaseState);
         else if (attackTimer <= 0)
             stateMachine.ChangeState(enemy.AttackState);

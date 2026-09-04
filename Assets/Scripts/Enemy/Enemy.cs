@@ -82,8 +82,10 @@ public class Enemy : MonoBehaviour
     public void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, EnemyConfig.TargetDistance + EnemyConfig.DistanceRange);
-        Gizmos.color = Color.orange;
-        Gizmos.DrawWireSphere(transform.position, EnemyConfig.TargetDistance - EnemyConfig.DistanceRange);
+        Gizmos.DrawWireSphere(transform.position, EnemyConfig.TargetDistance + EnemyConfig.EntryDistanceRange);
+        Gizmos.DrawWireSphere(transform.position, EnemyConfig.TargetDistance - EnemyConfig.EntryDistanceRange);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, EnemyConfig.TargetDistance + EnemyConfig.ExitDistanceRange);
+        Gizmos.DrawWireSphere(transform.position, EnemyConfig.TargetDistance - EnemyConfig.ExitDistanceRange);
     }
 }
