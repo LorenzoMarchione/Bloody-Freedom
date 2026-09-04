@@ -10,8 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a2db3e1422854d47b24d29ed0e5432b, type: 3}
-  m_Name: Base
+  m_Name: Test
   m_EditorClassIdentifier: Assembly-CSharp::EnemyConfig
   walkSpeed: 2
-  targetDistance: 2
-  distanceRange: 0.5
+  targetDistance: 1.8
+  distanceRange: 0.54
+  minStanceTime: 1
+  maxStanceTime: 5
+  minAttackCooldown: 2
+  maxAttackCooldown: 6
+  stepInSpeed: 5
+  stepInDuration: 0.2

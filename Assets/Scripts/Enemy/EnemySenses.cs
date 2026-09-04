@@ -25,16 +25,9 @@ public class EnemySenses : MonoBehaviour
 
         float sqrDistanceFromTarget = GetSqrDistanceFromTarget();
         if (sqrDistanceFromTarget < sqrMinDistance)
-        {
-            Debug.Log(-1);
             return -1;
-        }
         else if(sqrDistanceFromTarget > sqrMaxDistance)
-        {
-            Debug.Log(1);
             return 1;
-        }
-        Debug.Log(0);
         return 0;
     }
 }
