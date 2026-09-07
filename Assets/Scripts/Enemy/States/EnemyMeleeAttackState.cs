@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class EnemyAttackState : EnemyState
+public class EnemyMeleeAttackState : EnemyState
 {
     private float stepInTimer;
-    public EnemyAttackState(Enemy enem) : base(enem) { }
+    public EnemyMeleeAttackState(Enemy enem) : base(enem) { }
 
     public override void Enter()
     {

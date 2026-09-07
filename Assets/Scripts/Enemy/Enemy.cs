@@ -11,12 +11,14 @@ public class Enemy : MonoBehaviour
     public EnemyConfig EnemyConfig { get => EConfig; }
     public Transform Player { get => player; }
     [SerializeField] private Transform player;
+    [SerializeField] private Transform projectileSpawn;
     [SerializeField] private EnemyConfig EConfig;
 
     //States
     public EnemyChaseState ChaseState { get; private set; }
     public EnemyPositioningState PositionState { get; private set; }
-    public EnemyAttackState AttackState { get; private set; }
+    public EnemyMeleeAttackState MeleeAttackState { get; private set; }
+    public EnemyRangedAttackState RangedAttackState { get; private set; }
     public EnemyHitState HitState { get; private set; }
     public EnemyDeadState DeadState { get; private set; }
 
@@ -32,7 +34,8 @@ public class Enemy : MonoBehaviour
 
         ChaseState = new EnemyChaseState(this);
         PositionState = new EnemyPositioningState(this);
-        AttackState = new EnemyAttackState(this);
+        MeleeAttackState = new EnemyMeleeAttackState(this);
+        RangedAttackState = new EnemyRangedAttackState(this);
         HitState = new EnemyHitState(this);
         DeadState = new EnemyDeadState(this);
     }
@@ -76,8 +79,17 @@ public class Enemy : MonoBehaviour
         Vector3 rightDirection = Vector3.Cross(Vector3.up, targetDirection);
         RigidBody.linearVelocity = new Vector3(rightDirection.x * speed, RigidBody.linearVelocity.y, rightDirection.z * speed);
     }
-    public void BasicAttack() => Anim.Play("EnemyAttackTest");
     public void StepIn(float speed, Vector3 direction) => RigidBody.linearVelocity = new Vector3(direction.x * speed, RigidBody.linearVelocity.y, direction.z * speed);
+    public void BasicAttack() => Anim.Play("EnemyAttackTest");
+    public void RangedAttackAnim() => Anim.Play("EnemyRangedAttack");
+    public void RangedAttack()
+    {
+        Vector3 direction = (Player.position - projectileSpawn.position).normalized;
+
+        Projectile projectile = Instantiate(EnemyConfig.ProjectilePrefab, projectileSpawn.position, Quaternion.LookRotation(direction)).GetComponent<Projectile>();
+
+        projectile.Initialize(direction, EnemyConfig.ProjectileSpeed);
+    }
 
     public void OnDrawGizmosSelected()
     {
@@ -87,5 +99,7 @@ public class Enemy : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, EnemyConfig.TargetDistance + EnemyConfig.ExitDistanceRange);
         Gizmos.DrawWireSphere(transform.position, EnemyConfig.TargetDistance - EnemyConfig.ExitDistanceRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, EnemyConfig.RangedRange);
     }
 }

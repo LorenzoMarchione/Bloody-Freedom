@@ -23,12 +23,16 @@ public class EnemyPositioningState : EnemyState
     {
         stanceTimer -= Time.deltaTime;
         attackTimer -= Time.deltaTime;
+
         if (stanceTimer <= 0)
             ChooseNewStance();
+
         if (senses.TargetRange(config.ExitDistanceRange) != TargetRangeStatus.InRange)
             stateMachine.ChangeState(enemy.ChaseState);
-        else if (attackTimer <= 0)
-            stateMachine.ChangeState(enemy.AttackState);
+        else if (attackTimer <= 0 && senses.GetSqrDistanceFromTarget() < (config.RangedRange * config.RangedRange))
+            stateMachine.ChangeState(enemy.RangedAttackState);
+        else if (attackTimer <= 0 && senses.GetSqrDistanceFromTarget() < (config.MeleeRange * config.MeleeRange))
+            stateMachine.ChangeState(enemy.MeleeAttackState);
     }
     public override void FixedUpdate()
     {
