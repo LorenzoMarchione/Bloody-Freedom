@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a2db3e1422854d47b24d29ed0e5432b, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyConfig
+  walkSpeed: 2
+  targetDistance: 2
+  entryDistanceRange: 0.1
+  exitDistanceRange: 0.8
+  minStanceTime: 1
+  maxStanceTime: 5
+  minAttackCooldown: 2
+  maxAttackCooldown: 6
+  stepInSpeed: 2.5
+  stepInDuration: 0.2
