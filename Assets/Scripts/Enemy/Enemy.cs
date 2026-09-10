@@ -4,11 +4,12 @@ using static UnityEngine.Rendering.STP;
 public class Enemy : MonoBehaviour
 {
     //components
-    public Rigidbody RigidBody {  get; private set; }
+    public Health Health {  get; private set; }
     public EnemyStateMachine StateMachine { get; private set; }
     public EnemySenses Senses { get; private set; }
-    public Animator Anim {  get; private set; }
     public EnemyConfig EnemyConfig { get => EConfig; }
+    public Animator Anim {  get; private set; }
+    public Rigidbody RigidBody {  get; private set; }
     public Transform Player { get => player; }
     [SerializeField] private Transform player;
     [SerializeField] private Transform projectileSpawn;
@@ -28,8 +29,11 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         StateMachine = new EnemyStateMachine();
-        RigidBody = GetComponent<Rigidbody>();
+
+        Health  = GetComponent<Health>();
         Senses = GetComponent<EnemySenses>();
+        
+        RigidBody = GetComponent<Rigidbody>();
         Anim = GetComponent<Animator>();
 
         ChaseState = new EnemyChaseState(this);
