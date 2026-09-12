@@ -15,6 +15,8 @@ public class EnemyPositioningState : EnemyState
 
     public override void Enter()
     {
+        base.Enter();
+
         ChooseNewStance();
         SetNextAttack();
     }

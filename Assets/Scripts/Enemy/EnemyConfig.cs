@@ -8,6 +8,9 @@ public class EnemyConfig : ScriptableObject
     [Header("Movement Settings")]
     [SerializeField] private float walkSpeed = 2f;
 
+    [Header("Defense Settings")]
+    [SerializeField] private float recoilDuration = 1f;
+
     [Header("Combat Distances")]
     [SerializeField] private float targetDistance = 2f;
     [SerializeField] private float entryDistanceRange = 0.1f;
@@ -30,6 +33,7 @@ public class EnemyConfig : ScriptableObject
     [SerializeField] private GameObject profectilePrefab;
 
     public float WalkSpeed { get => walkSpeed; }
+    public float RecoilDuration {  get => recoilDuration; }
     public float TargetDistance { get => targetDistance; }
     public float EntryDistanceRange { get => entryDistanceRange; }
     public float ExitDistanceRange { get => exitDistanceRange; }

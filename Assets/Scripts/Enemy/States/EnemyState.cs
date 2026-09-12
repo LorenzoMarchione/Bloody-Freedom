@@ -1,3 +1,4 @@
+using System.Xml;
 using UnityEngine;
 
 public abstract class EnemyState
@@ -7,6 +8,7 @@ public abstract class EnemyState
     protected EnemySenses senses;
     protected EnemyConfig config;
     protected EnemyStateMachine stateMachine;
+    protected Health health;
     
     public EnemyState (Enemy enem)
     {
@@ -15,11 +17,28 @@ public abstract class EnemyState
         senses = enem.Senses;
         config = enem.EnemyConfig;
         stateMachine = enem.StateMachine;
+        health = enem.Health;
     }
 
-    public virtual void Enter() { }
-    public virtual void Exit() { }
+    public virtual void Enter() 
+    {
+        health.OnDamaged += HandleDamage;
+        health.OnDeath += HandleDeath;
+    }
+    public virtual void Exit()
+    {
+        health.OnDamaged -= HandleDamage;
+        health.OnDeath -= HandleDeath;
+    }
     public virtual void Update() { }
     public virtual void FixedUpdate() { }
     public virtual void OnAnimationFinished() { }
+    protected virtual void HandleDamage()
+    {
+        stateMachine.ChangeState(enemy.HitState);
+    }
+    protected virtual void HandleDeath()
+    {
+        stateMachine.ChangeState(enemy.DeadState);
+    }
 }
