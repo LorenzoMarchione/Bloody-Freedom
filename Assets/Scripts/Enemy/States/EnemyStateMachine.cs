@@ -14,7 +14,7 @@ public class EnemyStateMachine
     public void Initialize(EnemyState state)
     {
         ChangeState(state);
-    }
+    } 
     public void Update()
     {
         currentState.Update();

@@ -20,12 +20,13 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (value.isPressed)
         {
-            MeleeAttack();
+            GetComponent<Animator>().SetTrigger("Attack");
         }
     }
 
-    private void MeleeAttack()
+    public void AttackEvent()
     {
+        
         // 1. calcular la posicion frente al jugador
         Vector3 attackPosition = transform.position + (transform.forward * attackRange) + (Vector3.up * attackHeightOffset);
 

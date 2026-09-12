@@ -7,6 +7,8 @@ public class EnemyMeleeAttackState : EnemyState
 
     public override void Enter()
     {
+        base.Enter();
+
         stepInTimer = config.StepInDuration;
         enemy.StepIn(config.StepInSpeed, enemy.TargetDirection);
         enemy.BasicAttack();
