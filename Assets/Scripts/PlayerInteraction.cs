@@ -5,7 +5,7 @@ using System.Collections;
 public class PlayerInteraction : MonoBehaviour
 {
     [Header("Melee attack config")]
-    [SerializeField] private float damage = 25f; //daño de la espada, puede cambiar a futuro
+    [SerializeField] private int damage = 25; //daño de la espada, puede cambiar a futuro
     [SerializeField] private float attackRange = 1.5f; // distancia del jugador
     [SerializeField] private float attackHeightOffset = 1.0f;
     [SerializeField] private Vector3 attackBoxSize = new Vector3(1f, 3f, 1f); // tamaño de la hitbox
@@ -40,7 +40,12 @@ public class PlayerInteraction : MonoBehaviour
 
             foreach (Collider hit in hitColliders)
             {
-                //logica de hacerle daño a los enemigos aquí (((((((((((((((((!!!!!!!!!!!!!!!))))))))))))))))))))))))))))
+                if(hit.TryGetComponent<Health>(out Health hp))
+                {
+                    Debug.Log("HIT");
+                    hp.ChangeHealth(-damage);
+                    break;
+                }
             }
         }
         else

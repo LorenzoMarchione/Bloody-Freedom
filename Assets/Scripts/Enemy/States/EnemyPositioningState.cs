@@ -31,9 +31,9 @@ public class EnemyPositioningState : EnemyState
 
         if (senses.TargetRange(config.ExitDistanceRange) != TargetRangeStatus.InRange)
             stateMachine.ChangeState(enemy.ChaseState);
-        else if (attackTimer <= 0 && senses.GetSqrDistanceFromTarget() < (config.RangedRange * config.RangedRange))
+        else if (CanAttack() && senses.GetSqrDistanceFromTarget() < (config.RangedRange * config.RangedRange))
             stateMachine.ChangeState(enemy.RangedAttackState);
-        else if (attackTimer <= 0 && senses.GetSqrDistanceFromTarget() < (config.MeleeRange * config.MeleeRange))
+        else if (CanAttack() && senses.GetSqrDistanceFromTarget() < (config.MeleeRange * config.MeleeRange))
             stateMachine.ChangeState(enemy.MeleeAttackState);
     }
     public override void FixedUpdate()
@@ -63,8 +63,8 @@ public class EnemyPositioningState : EnemyState
         }
         while (currentStance == newStance);
         currentStance = newStance;
-        Debug.Log(currentStance.ToString()); 
         stanceTimer = Random.Range(config.MinStanceTime, config.MaxStanceTime);
     }
     private void SetNextAttack() => attackTimer = Random.Range(config.MinAttackCooldown, config.MaxAttackCooldown);
+    private bool CanAttack() => Time.time > enemy.LastAttackTime + attackTimer;
 }

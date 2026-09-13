@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
     //useful data
     private Vector3 targetDirection;
     public Vector3 TargetDirection { get => targetDirection; }
+    public float LastAttackTime { get; private set; }
     private void Awake()
     {
         StateMachine = new EnemyStateMachine();
@@ -84,6 +85,7 @@ public class Enemy : MonoBehaviour
         RigidBody.linearVelocity = new Vector3(rightDirection.x * speed, RigidBody.linearVelocity.y, rightDirection.z * speed);
     }
     public void StepIn(float speed, Vector3 direction) => RigidBody.linearVelocity = new Vector3(direction.x * speed, RigidBody.linearVelocity.y, direction.z * speed);
+    public void ConsumeAttack() => LastAttackTime = Time.time;
     public void BasicAttack() => Anim.Play("EnemyAttackTest");
     public void RangedAttackAnim() => Anim.Play("EnemyRangedAttack");
     public void RangedAttack()
