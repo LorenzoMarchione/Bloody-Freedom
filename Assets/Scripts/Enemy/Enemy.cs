@@ -95,10 +95,11 @@ public class Enemy : MonoBehaviour
     public void RangedAttack()
     {
         Vector3 direction = (Player.position - projectileSpawn.position).normalized;
+        Quaternion rotation = Quaternion.LookRotation(direction) * Quaternion.Euler(90f, 0f, 0f);
 
-        Projectile projectile = Instantiate(EnemyConfig.ProjectilePrefab, projectileSpawn.position, Quaternion.LookRotation(direction)).GetComponent<Projectile>();
+        Projectile projectile = Instantiate(EnemyConfig.ProjectilePrefab, projectileSpawn.position, rotation).GetComponent<Projectile>();
 
-        projectile.Initialize(direction, EnemyConfig.ProjectileSpeed);
+        projectile.Initialize(direction, EnemyConfig.ProjectileSpeed, EnemyConfig.ProjectileDamage);
     }
 
     //Extra Functions

@@ -26,12 +26,14 @@ public class EnemyConfig : ScriptableObject
 
     [Header("Melee Specifics")]
     [SerializeField] private float meleeRange = 2.5f;
+    [SerializeField] private int meleeDamage = 10;
     [SerializeField] private float stepInSpeed = 2.5f;
     [SerializeField] private float stepInDuration = 0.20f;
 
     [Header("Ranged Specifics")]
     [SerializeField] private float rangedRange = 7f;
     [SerializeField] private float projectileSpeed = 5f;
+    [SerializeField] private int projectileDamage = 25;
     [SerializeField] private GameObject profectilePrefab;
 
     public float WalkSpeed => walkSpeed; 
@@ -47,7 +49,9 @@ public class EnemyConfig : ScriptableObject
     public float StepInSpeed => stepInSpeed; 
     public float StepInDuration => stepInDuration; 
     public float MeleeRange => meleeRange;
+    public int MeleeDamage => meleeDamage;
     public float RangedRange => rangedRange; 
     public float ProjectileSpeed => projectileSpeed; 
+    public int ProjectileDamage => projectileDamage;
     public GameObject ProjectilePrefab => profectilePrefab; 
 }

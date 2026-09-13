@@ -23,8 +23,10 @@ MonoBehaviour:
   minAttackCooldown: 2
   maxAttackCooldown: 6
   meleeRange: 2.5
+  meleeDamage: 10
   stepInSpeed: 2.5
   stepInDuration: 0.2
   rangedRange: 10.5
   projectileSpeed: 20
-  profectilePrefab: {fileID: 3674489672148630911, guid: aac19a3eb668ddb429e31ecf3cbd5720, type: 3}
+  projectileDamage: 25
+  profectilePrefab: {fileID: 9113620617452685846, guid: aac19a3eb668ddb429e31ecf3cbd5720, type: 3}
