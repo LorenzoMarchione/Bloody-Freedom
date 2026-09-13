@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: RangedTest
   m_EditorClassIdentifier: Assembly-CSharp::EnemyConfig
   walkSpeed: 2
+  recoilDuration: 0.5
+  recoilSpeed: 10
   targetDistance: 7
   entryDistanceRange: 0.2
   exitDistanceRange: 4

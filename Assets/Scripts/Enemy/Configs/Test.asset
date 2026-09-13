@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: Assembly-CSharp::EnemyConfig
   walkSpeed: 2
+  recoilDuration: 0.3
+  recoilSpeed: 6
   targetDistance: 2
   entryDistanceRange: 0.1
   exitDistanceRange: 0.8
@@ -20,5 +22,9 @@ MonoBehaviour:
   maxStanceTime: 5
   minAttackCooldown: 2
   maxAttackCooldown: 6
+  meleeRange: 2.5
   stepInSpeed: 2.5
   stepInDuration: 0.2
+  rangedRange: 0
+  projectileSpeed: 0
+  profectilePrefab: {fileID: 0}
