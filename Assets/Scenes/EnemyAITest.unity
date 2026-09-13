@@ -1274,6 +1274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RangedEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 193020452588998822, guid: 59c9d96cd55d1ca468b67ede8ac80bc2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 502464347713461463, guid: 59c9d96cd55d1ca468b67ede8ac80bc2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -33.53137
@@ -14188,6 +14192,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 883040326}
+    - target: {fileID: 913510668178418312, guid: e7d1475ff79f6274db6f60891dd2ac0b, type: 3}
+      propertyPath: meleePoint
+      value: 
+      objectReference: {fileID: 522760664664191073}
     - target: {fileID: 7002130667440628939, guid: e7d1475ff79f6274db6f60891dd2ac0b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -38.42
@@ -14237,6 +14245,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7d1475ff79f6274db6f60891dd2ac0b, type: 3}
+--- !u!4 &522760664664191073 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6024356310555816875, guid: e7d1475ff79f6274db6f60891dd2ac0b, type: 3}
+  m_PrefabInstance: {fileID: 522760664664191072}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

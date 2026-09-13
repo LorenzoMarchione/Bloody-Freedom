@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 [CreateAssetMenu(menuName = "Enemies/Base Enemy Config")]
 public class EnemyConfig : ScriptableObject
 {
+    [SerializeField] private LayerMask playerLayer;
     [Header("Movement Settings")]
     [SerializeField] private float walkSpeed = 2f;
 
@@ -27,6 +28,7 @@ public class EnemyConfig : ScriptableObject
     [Header("Melee Specifics")]
     [SerializeField] private float meleeRange = 2.5f;
     [SerializeField] private int meleeDamage = 10;
+    [SerializeField] private float meleeAttackRadius = 2f;
     [SerializeField] private float stepInSpeed = 2.5f;
     [SerializeField] private float stepInDuration = 0.20f;
 
@@ -36,6 +38,7 @@ public class EnemyConfig : ScriptableObject
     [SerializeField] private int projectileDamage = 25;
     [SerializeField] private GameObject profectilePrefab;
 
+    public LayerMask PlayerLayer => playerLayer;
     public float WalkSpeed => walkSpeed; 
     public float RecoilDuration => recoilDuration; 
     public float RecoilSpeed => recoilSpeed;
@@ -50,6 +53,7 @@ public class EnemyConfig : ScriptableObject
     public float StepInDuration => stepInDuration; 
     public float MeleeRange => meleeRange;
     public int MeleeDamage => meleeDamage;
+    public float MeleeAttackRadius => meleeAttackRadius;
     public float RangedRange => rangedRange; 
     public float ProjectileSpeed => projectileSpeed; 
     public int ProjectileDamage => projectileDamage;

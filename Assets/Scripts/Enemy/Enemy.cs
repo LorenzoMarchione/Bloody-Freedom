@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public Transform Player { get => player; }
     [SerializeField] private Transform player;
     [SerializeField] private Transform projectileSpawn;
+    [SerializeField] private Transform meleePoint;
     [SerializeField] private EnemyConfig EConfig;
 
     //States
@@ -49,23 +50,15 @@ public class Enemy : MonoBehaviour
         this.player = player;
         StateMachine.Initialize(ChaseState);
     }
-    private void Start()
-    {
-        StateMachine.Initialize(ChaseState);
-    }
-    private void Update()
-    {
-        StateMachine.Update();
-    }
+    private void Start() => StateMachine.Initialize(ChaseState);
+    private void Update() => StateMachine.Update();
     private void FixedUpdate()
     {
         SetTargetDirection();
         StateMachine.FixedUpdate();
     }
-    public void OnAnimationFinished()
-    {
-        StateMachine.OnAnimationFinished();
-    }
+    public void OnAnimationFinished() => StateMachine.OnAnimationFinished();
+    public void OnAnimationTrigger() => StateMachine.OnAnimationTrigger();
 
     //Movement and direction functions
     public void SetTargetDirection()
@@ -91,6 +84,23 @@ public class Enemy : MonoBehaviour
     //Combat Functions
     public void ConsumeAttack() => LastAttackTime = Time.time;
     public void BasicAttack() => Anim.Play("EnemyAttackTest");
+    public void MeleeAttack()
+    {
+        Collider[] hits = Physics.OverlapSphere(
+            meleePoint.position,
+            EnemyConfig.MeleeAttackRadius,
+            EnemyConfig.PlayerLayer
+        );
+
+        foreach (Collider hit in hits)
+        {
+            if (hit.TryGetComponent(out Health health))
+            {
+                health.ChangeHealth(-EnemyConfig.MeleeDamage);
+                break;
+            }
+        }
+    }
     public void RangedAttackAnim() => Anim.Play("EnemyRangedAttack");
     public void RangedAttack()
     {
@@ -116,5 +126,7 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, EnemyConfig.TargetDistance - EnemyConfig.ExitDistanceRange);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, EnemyConfig.RangedRange);
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireSphere(meleePoint.position, EnemyConfig.MeleeAttackRadius);
     }
 }
