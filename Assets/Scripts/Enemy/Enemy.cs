@@ -66,6 +66,8 @@ public class Enemy : MonoBehaviour
     {
         StateMachine.OnAnimationFinished();
     }
+
+    //Movement and direction functions
     public void SetTargetDirection()
     {
         Vector3 direction = Player.transform.position - transform.position;
@@ -85,6 +87,8 @@ public class Enemy : MonoBehaviour
         RigidBody.linearVelocity = new Vector3(rightDirection.x * speed, RigidBody.linearVelocity.y, rightDirection.z * speed);
     }
     public void StepIn(float speed, Vector3 direction) => RigidBody.linearVelocity = new Vector3(direction.x * speed, RigidBody.linearVelocity.y, direction.z * speed);
+    
+    //Combat Functions
     public void ConsumeAttack() => LastAttackTime = Time.time;
     public void BasicAttack() => Anim.Play("EnemyAttackTest");
     public void RangedAttackAnim() => Anim.Play("EnemyRangedAttack");
@@ -97,6 +101,10 @@ public class Enemy : MonoBehaviour
         projectile.Initialize(direction, EnemyConfig.ProjectileSpeed);
     }
 
+    //Extra Functions
+    public void DestroySelf() => Destroy(gameObject);
+
+    //Gizmos
     public void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

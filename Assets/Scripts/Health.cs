@@ -12,16 +12,7 @@ public class Health : MonoBehaviour
     private void Start() => currentHealth = maxHealth;
     public void ChangeHealth(int amount)
     {
-
-        Debug.Log(
-            $"Health de {gameObject.name} | ID: {GetInstanceID()} | " +
-            $"Antes: {currentHealth} | Cambio: {amount}"
-        );
         currentHealth += amount;
-        Debug.Log(
-            $"Health de {gameObject.name} | ID: {GetInstanceID()} | " +
-            $"Después: {currentHealth}"
-        );
         if (currentHealth > maxHealth)
             currentHealth = maxHealth;
         
@@ -30,10 +21,6 @@ public class Health : MonoBehaviour
         else if(currentHealth <= 0)
             OnDeath?.Invoke();
         else
-        {
-
-            Debug.Log(currentHealth);
             OnDamaged?.Invoke();
-        }
     }
 }

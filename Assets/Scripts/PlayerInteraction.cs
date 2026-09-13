@@ -36,21 +36,14 @@ public class PlayerInteraction : MonoBehaviour
         // 3. imprimir objetos colisionados
         if (hitColliders.Length > 0)
         {
-            Debug.Log("<color=red>HIT</color> with object: " + hitColliders.Length); //golpeó un objeto
-
             foreach (Collider hit in hitColliders)
             {
                 if(hit.TryGetComponent<Health>(out Health hp))
                 {
-                    Debug.Log("HIT");
                     hp.ChangeHealth(-damage);
                     break;
                 }
             }
-        }
-        else
-        {
-            Debug.Log("<color=yellow> didn't hit annything. </color>"); //no golpeo a nada
         }
 
         // 4. hacer aparecer la hitbox
