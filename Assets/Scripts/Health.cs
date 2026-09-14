@@ -9,21 +9,18 @@ public class Health : MonoBehaviour
     [SerializeField] private int maxHealth;
     [SerializeField] private int currentHealth;
 
-    private void Start()
+    private void Start() => currentHealth = maxHealth;
+    public void ChangeHealth(int amount)
     {
-        currentHealth = maxHealth;
-    }
-    public void ChangeHealth(int health)
-    {
-        currentHealth += health;
-        if(currentHealth > maxHealth)
+        currentHealth += amount;
+        if (currentHealth > maxHealth)
             currentHealth = maxHealth;
         
-        if(health > 0)
+        if(amount > 0)
             OnHeal?.Invoke();
         else if(currentHealth <= 0)
             OnDeath?.Invoke();
-        else 
+        else
             OnDamaged?.Invoke();
     }
 }

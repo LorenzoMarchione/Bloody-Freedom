@@ -1,15 +1,18 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 [CreateAssetMenu(menuName = "Enemies/Base Enemy Config")]
 public class EnemyConfig : ScriptableObject
 {
+    [SerializeField] private LayerMask playerLayer;
     [Header("Movement Settings")]
     [SerializeField] private float walkSpeed = 2f;
 
     [Header("Defense Settings")]
-    [SerializeField] private float recoilDuration = 1f;
+    [SerializeField] private float recoilDuration = 0.3f;
+    [SerializeField] private float recoilSpeed = 6f;
 
     [Header("Combat Distances")]
     [SerializeField] private float targetDistance = 2f;
@@ -24,27 +27,35 @@ public class EnemyConfig : ScriptableObject
 
     [Header("Melee Specifics")]
     [SerializeField] private float meleeRange = 2.5f;
+    [SerializeField] private int meleeDamage = 10;
+    [SerializeField] private float meleeAttackRadius = 2f;
     [SerializeField] private float stepInSpeed = 2.5f;
     [SerializeField] private float stepInDuration = 0.20f;
 
     [Header("Ranged Specifics")]
     [SerializeField] private float rangedRange = 7f;
     [SerializeField] private float projectileSpeed = 5f;
+    [SerializeField] private int projectileDamage = 25;
     [SerializeField] private GameObject profectilePrefab;
 
-    public float WalkSpeed { get => walkSpeed; }
-    public float RecoilDuration {  get => recoilDuration; }
-    public float TargetDistance { get => targetDistance; }
-    public float EntryDistanceRange { get => entryDistanceRange; }
-    public float ExitDistanceRange { get => exitDistanceRange; }
-    public float MinStanceTime { get => minStanceTime; }
-    public float MaxStanceTime { get => maxStanceTime; }
-    public float MinAttackCooldown { get => minAttackCooldown; }
-    public float MaxAttackCooldown { get => maxAttackCooldown; }
-    public float StepInSpeed { get => stepInSpeed; }
-    public float StepInDuration { get => stepInDuration; }
-    public float MeleeRange { get => meleeRange; }
-    public float RangedRange { get => rangedRange; }
-    public float ProjectileSpeed { get => projectileSpeed; }
-    public GameObject ProjectilePrefab { get => profectilePrefab; }
+    public LayerMask PlayerLayer => playerLayer;
+    public float WalkSpeed => walkSpeed; 
+    public float RecoilDuration => recoilDuration; 
+    public float RecoilSpeed => recoilSpeed;
+    public float TargetDistance => targetDistance; 
+    public float EntryDistanceRange => entryDistanceRange; 
+    public float ExitDistanceRange => exitDistanceRange; 
+    public float MinStanceTime => minStanceTime; 
+    public float MaxStanceTime => maxStanceTime; 
+    public float MinAttackCooldown => minAttackCooldown; 
+    public float MaxAttackCooldown => maxAttackCooldown; 
+    public float StepInSpeed => stepInSpeed; 
+    public float StepInDuration => stepInDuration; 
+    public float MeleeRange => meleeRange;
+    public int MeleeDamage => meleeDamage;
+    public float MeleeAttackRadius => meleeAttackRadius;
+    public float RangedRange => rangedRange; 
+    public float ProjectileSpeed => projectileSpeed; 
+    public int ProjectileDamage => projectileDamage;
+    public GameObject ProjectilePrefab => profectilePrefab; 
 }
