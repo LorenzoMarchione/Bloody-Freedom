@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public Transform Player { get => player; }
     [SerializeField] private Transform player;
     [SerializeField] private Transform projectileSpawn;
+    [SerializeField] private Transform meleePoint;
     [SerializeField] private EnemyConfig EConfig;
 
     //States
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour
     //useful data
     private Vector3 targetDirection;
     public Vector3 TargetDirection { get => targetDirection; }
+    public float LastAttackTime { get; private set; }
     private void Awake()
     {
         StateMachine = new EnemyStateMachine();
@@ -48,23 +50,17 @@ public class Enemy : MonoBehaviour
         this.player = player;
         StateMachine.Initialize(ChaseState);
     }
-    private void Start()
-    {
-        StateMachine.Initialize(ChaseState);
-    }
-    private void Update()
-    {
-        StateMachine.Update();
-    }
+    private void Start() => StateMachine.Initialize(ChaseState);
+    private void Update() => StateMachine.Update();
     private void FixedUpdate()
     {
         SetTargetDirection();
         StateMachine.FixedUpdate();
     }
-    public void OnAnimationFinished()
-    {
-        StateMachine.OnAnimationFinished();
-    }
+    public void OnAnimationFinished() => StateMachine.OnAnimationFinished();
+    public void OnAnimationTrigger() => StateMachine.OnAnimationTrigger();
+
+    //Movement and direction functions
     public void SetTargetDirection()
     {
         Vector3 direction = Player.transform.position - transform.position;
@@ -84,17 +80,42 @@ public class Enemy : MonoBehaviour
         RigidBody.linearVelocity = new Vector3(rightDirection.x * speed, RigidBody.linearVelocity.y, rightDirection.z * speed);
     }
     public void StepIn(float speed, Vector3 direction) => RigidBody.linearVelocity = new Vector3(direction.x * speed, RigidBody.linearVelocity.y, direction.z * speed);
+    
+    //Combat Functions
+    public void ConsumeAttack() => LastAttackTime = Time.time;
     public void BasicAttack() => Anim.Play("EnemyAttackTest");
+    public void MeleeAttack()
+    {
+        Collider[] hits = Physics.OverlapSphere(
+            meleePoint.position,
+            EnemyConfig.MeleeAttackRadius,
+            EnemyConfig.PlayerLayer
+        );
+
+        foreach (Collider hit in hits)
+        {
+            if (hit.TryGetComponent(out Health health))
+            {
+                health.ChangeHealth(-EnemyConfig.MeleeDamage);
+                break;
+            }
+        }
+    }
     public void RangedAttackAnim() => Anim.Play("EnemyRangedAttack");
     public void RangedAttack()
     {
         Vector3 direction = (Player.position - projectileSpawn.position).normalized;
+        Quaternion rotation = Quaternion.LookRotation(direction) * Quaternion.Euler(90f, 0f, 0f);
 
-        Projectile projectile = Instantiate(EnemyConfig.ProjectilePrefab, projectileSpawn.position, Quaternion.LookRotation(direction)).GetComponent<Projectile>();
+        Projectile projectile = Instantiate(EnemyConfig.ProjectilePrefab, projectileSpawn.position, rotation).GetComponent<Projectile>();
 
-        projectile.Initialize(direction, EnemyConfig.ProjectileSpeed);
+        projectile.Initialize(direction, EnemyConfig.ProjectileSpeed, EnemyConfig.ProjectileDamage);
     }
 
+    //Extra Functions
+    public void DestroySelf() => Destroy(gameObject);
+
+    //Gizmos
     public void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
@@ -105,5 +126,7 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, EnemyConfig.TargetDistance - EnemyConfig.ExitDistanceRange);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, EnemyConfig.RangedRange);
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireSphere(meleePoint.position, EnemyConfig.MeleeAttackRadius);
     }
 }

@@ -32,6 +32,7 @@ public abstract class EnemyState
     }
     public virtual void Update() { }
     public virtual void FixedUpdate() { }
+    public virtual void OnAnimationTrigger() { }
     public virtual void OnAnimationFinished() { }
     protected virtual void HandleDamage()
     {
