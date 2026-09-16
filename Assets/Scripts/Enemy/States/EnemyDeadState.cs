@@ -9,5 +9,6 @@ public class EnemyDeadState : EnemyState
         base.Enter();
 
         enemy.StopMovement();
+        enemy.DestroySelf();
     }
 }

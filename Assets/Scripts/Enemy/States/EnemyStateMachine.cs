@@ -11,20 +11,9 @@ public class EnemyStateMachine
         currentState = state;
         currentState.Enter();
     }
-    public void Initialize(EnemyState state)
-    {
-        ChangeState(state);
-    } 
-    public void Update()
-    {
-        currentState.Update();
-    }
-    public void FixedUpdate()
-    {
-        currentState.FixedUpdate();
-    }
-    public void OnAnimationFinished()
-    {
-        currentState.OnAnimationFinished();
-    }
+    public void Initialize(EnemyState state) => ChangeState(state);
+    public void Update() => currentState.Update();
+    public void FixedUpdate() => currentState.FixedUpdate();
+    public void OnAnimationFinished() => currentState.OnAnimationFinished();
+    public void OnAnimationTrigger() => currentState.OnAnimationTrigger();
 }

@@ -10,6 +10,7 @@ public class EnemyMeleeAttackState : EnemyState
         base.Enter();
 
         stepInTimer = config.StepInDuration;
+        enemy.ConsumeAttack();
         enemy.StepIn(config.StepInSpeed, enemy.TargetDirection);
         enemy.BasicAttack();
     }
@@ -19,8 +20,6 @@ public class EnemyMeleeAttackState : EnemyState
         if(stepInTimer <= 0)
             enemy.StopMovement();
     }
-    public override void OnAnimationFinished()
-    {
-        stateMachine.ChangeState(enemy.PositionState);
-    }
+    public override void OnAnimationTrigger() => enemy.MeleeAttack();
+    public override void OnAnimationFinished() => stateMachine.ChangeState(enemy.PositionState);
 }
