@@ -20,7 +20,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (value.isPressed)
         {
-            GetComponent<Animator>().SetTrigger("Attack");
+            AttackEvent();
         }
     }
 
@@ -28,7 +28,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         
         // 1. calcular la posicion frente al jugador
-        Vector3 attackPosition = transform.position + (transform.forward * attackRange) + (Vector3.up * attackHeightOffset);
+        Vector3 attackPosition = transform.position + (transform.forward * attackRange);
 
         // 2. deteccion fisica en area (OverlapBox)
         Collider[] hitColliders = Physics.OverlapBox(attackPosition, attackBoxSize / 2, transform.rotation, enemyLayer);

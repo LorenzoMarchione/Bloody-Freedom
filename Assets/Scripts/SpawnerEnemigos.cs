@@ -5,8 +5,8 @@ public class SpawnerEnemigos : MonoBehaviour
 {
     public GameObject prefabEnemigo; 
     public float intervaloSpawn = 3f; 
-    public List<Transform> puntosSpawn; 
-
+    public List<Transform> puntosSpawn;
+    public Transform player;
     void Start()
     {
         InvokeRepeating("GenerarEnemigo", 5f, intervaloSpawn);
@@ -25,6 +25,7 @@ public class SpawnerEnemigos : MonoBehaviour
         Transform puntoElegido = puntosSpawn[indiceAleatorio];
 
         // Crear el enemigo en la posición y rotación del punto elegido
-        Instantiate(prefabEnemigo, puntoElegido.position, puntoElegido.rotation);
+        GameObject enem = Instantiate(prefabEnemigo, puntoElegido.position, puntoElegido.rotation);
+        enem.GetComponent<Enemy>().Initialize(player);
     }
 }
