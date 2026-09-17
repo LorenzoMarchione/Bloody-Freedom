@@ -85,11 +85,16 @@ public class MyPlayerInput : MonoBehaviour
     }
     private void LateUpdate()
     {
+        if (cameraRoot == null)
+            return;
+
         cameraYaw += lookInput.x * cameraSensitivity;
-        cameraPitch += lookInput.y * cameraSensitivity;
+        cameraPitch -= lookInput.y * cameraSensitivity;
 
         cameraPitch = Mathf.Clamp(cameraPitch, -30f, 70f);
 
-        cameraRoot.rotation = Quaternion.Euler(cameraPitch, cameraYaw, 0f);
+        cameraRoot.localRotation = Quaternion.Euler(cameraPitch, 0f, 0f);
+
+        transform.rotation = Quaternion.Euler(0f, cameraYaw, 0f);
     }
 }

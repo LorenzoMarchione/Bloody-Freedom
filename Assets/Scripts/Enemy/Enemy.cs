@@ -32,11 +32,18 @@ public class Enemy : MonoBehaviour
     {
         StateMachine = new EnemyStateMachine();
 
-        Health  = GetComponent<Health>();
+        Health = GetComponent<Health>();
         Senses = GetComponent<EnemySenses>();
-        
+
         RigidBody = GetComponent<Rigidbody>();
         Anim = GetComponent<Animator>();
+
+        GameObject jugador = GameObject.FindGameObjectWithTag("Player");
+
+        if (jugador != null)
+        {
+            player = jugador.transform;
+        }
 
         ChaseState = new EnemyChaseState(this);
         PositionState = new EnemyPositioningState(this);

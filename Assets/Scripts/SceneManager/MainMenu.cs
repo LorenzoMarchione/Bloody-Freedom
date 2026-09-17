@@ -13,6 +13,6 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("coliseo");
+        SceneManager.LoadScene("Level");
     }
 }
