@@ -8285,6 +8285,7 @@ GameObject:
   - component: {fileID: 1367563984}
   - component: {fileID: 1367563985}
   - component: {fileID: 1367563986}
+  - component: {fileID: 1367563987}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -8539,6 +8540,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 100
   currentHealth: 0
+--- !u!114 &1367563987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367563974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7928b3494800e6a4d8e0d663ecec5651, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerGameOver
 --- !u!1 &1370835151
 GameObject:
   m_ObjectHideFlags: 0
