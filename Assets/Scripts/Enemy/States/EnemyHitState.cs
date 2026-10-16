@@ -12,7 +12,7 @@ public class EnemyHitState : EnemyState
         Debug.Log("Recoil");
         recoilTimer = config.RecoilDuration;
         enemy.StepIn(config.RecoilSpeed, -enemy.TargetDirection);
-        enemy.BasicAttack();
+      //  enemy.BasicAttack();
     }
     public override void Update() => recoilTimer -= Time.deltaTime;
     public override void FixedUpdate()

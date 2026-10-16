@@ -9,7 +9,7 @@ public class EnemyRangedAttackState : EnemyState
         base.Enter();
 
         enemy.ConsumeAttack();
-        enemy.RangedAttackAnim();
+      //  enemy.RangedAttackAnim();
     }
     public override void OnAnimationFinished()
     {

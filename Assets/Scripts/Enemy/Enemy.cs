@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 using static UnityEngine.Rendering.STP;
 
 public class Enemy : MonoBehaviour
@@ -15,6 +16,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform projectileSpawn;
     [SerializeField] private Transform meleePoint;
     [SerializeField] private EnemyConfig EConfig;
+    [SerializeField] private float speed;
 
     //States
     public EnemyChaseState ChaseState { get; private set; }
@@ -80,7 +82,15 @@ public class Enemy : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(targetDirection);
     }
     public void StopMovement() => RigidBody.linearVelocity = new Vector3(0, RigidBody.linearVelocity.y, 0);
-    public void ChaseTarget(float speed) => RigidBody.linearVelocity = new Vector3 (targetDirection.x * speed, RigidBody.linearVelocity.y, targetDirection.z * speed);
+    public void ChaseTarget(float speed)
+    {
+        RigidBody.linearVelocity = new Vector3(targetDirection.x * speed, RigidBody.linearVelocity.y, targetDirection.z * speed);
+
+        Anim.SetFloat("Speed", RigidBody.linearVelocity.magnitude);
+        Anim.SetFloat("MovX", RigidBody.linearVelocity.x);
+        Anim.SetFloat("MovZ", RigidBody.linearVelocity.z);
+    }
+
     public void StrafeTarget(float speed)
     {
         Vector3 rightDirection = Vector3.Cross(Vector3.up, targetDirection);
@@ -90,7 +100,7 @@ public class Enemy : MonoBehaviour
     
     //Combat Functions
     public void ConsumeAttack() => LastAttackTime = Time.time;
-    public void BasicAttack() => Anim.Play("EnemyAttackTest");
+    public void BasicAttack() => Anim.SetTrigger("attack");
     public void MeleeAttack()
     {
         Collider[] hits = Physics.OverlapSphere(

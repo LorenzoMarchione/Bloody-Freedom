@@ -7,7 +7,7 @@ public class PlayerInteraction : MonoBehaviour
     [Header("Melee attack config")]
     [SerializeField] private int damage = 25; //daño de la espada, puede cambiar a futuro
     [SerializeField] private float attackRange = 1.5f; // distancia del jugador
-    [SerializeField] private float attackHeightOffset = 1.0f;
+   // [SerializeField] private float attackHeightOffset = 1.0f;
     [SerializeField] private Vector3 attackBoxSize = new Vector3(1f, 3f, 1f); // tamaño de la hitbox
     [SerializeField] private LayerMask enemyLayer; // filtro de colisiones (solo detectar colisiones con enemigos)
 
