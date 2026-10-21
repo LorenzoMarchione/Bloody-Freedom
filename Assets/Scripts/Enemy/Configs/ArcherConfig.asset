@@ -18,7 +18,7 @@ MonoBehaviour:
   walkSpeed: 2
   recoilDuration: 0.5
   recoilSpeed: 10
-  targetDistance: 5.75
+  targetDistance: 6
   entryDistanceRange: 0.2
   exitDistanceRange: 5
   minStanceTime: 1
