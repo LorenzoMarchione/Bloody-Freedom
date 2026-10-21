@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 364beebf2a355df45b81ebebab78c3da
+guid: 20f2737f9a9bce54a948e19954acdf1c
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -31,7 +31,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: mixamo.com
+      name: Standing Walk Left
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0

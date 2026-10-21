@@ -79,12 +79,43 @@ public class Enemy : MonoBehaviour
         if(targetDirection != Vector3.zero) 
             transform.rotation = Quaternion.LookRotation(targetDirection);
     }
-    public void StopMovement() => RigidBody.linearVelocity = new Vector3(0, RigidBody.linearVelocity.y, 0);
-    public void ChaseTarget(float speed) => RigidBody.linearVelocity = new Vector3 (targetDirection.x * speed, RigidBody.linearVelocity.y, targetDirection.z * speed);
+    public void StopMovement()
+    {
+        RigidBody.linearVelocity = new Vector3(0, RigidBody.linearVelocity.y, 0);
+        Anim.SetFloat("Speed", 0);
+        Anim.SetFloat("MovX", 0); 
+        Anim.SetFloat("MovZ", 0);
+    }
+    public void ChaseTarget(float speed)
+    {
+        RigidBody.linearVelocity = new Vector3 (targetDirection.x * speed, RigidBody.linearVelocity.y, targetDirection.z * speed);
+        Anim.SetFloat("Speed", speed);
+        if(speed > 0)
+        {
+            Anim.SetFloat("MovX", 0);
+            Anim.SetFloat("MovZ", 1);
+        }
+        else
+        {
+            Anim.SetFloat("MovX", 0);
+            Anim.SetFloat("MovZ", -1);
+        }
+    }
     public void StrafeTarget(float speed)
     {
         Vector3 rightDirection = Vector3.Cross(Vector3.up, targetDirection);
         RigidBody.linearVelocity = new Vector3(rightDirection.x * speed, RigidBody.linearVelocity.y, rightDirection.z * speed);
+        Anim.SetFloat("Speed", speed);
+        if (speed > 0)
+        {
+            Anim.SetFloat("MovX", 1);
+            Anim.SetFloat("MovZ", 0);
+        }
+        else
+        {
+            Anim.SetFloat("MovX", -1);
+            Anim.SetFloat("MovZ", 0);
+        }
     }
     public void StepIn(float speed, Vector3 direction) => RigidBody.linearVelocity = new Vector3(direction.x * speed, RigidBody.linearVelocity.y, direction.z * speed);
     
