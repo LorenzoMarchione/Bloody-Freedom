@@ -121,7 +121,7 @@ public class Enemy : MonoBehaviour
     
     //Combat Functions
     public void ConsumeAttack() => LastAttackTime = Time.time;
-    public void BasicAttack() => Anim.Play("EnemyAttackTest");
+    public void BasicAttack() => Anim.SetTrigger("MeleeAtk");
     public void MeleeAttack()
     {
         Collider[] hits = Physics.OverlapSphere(
