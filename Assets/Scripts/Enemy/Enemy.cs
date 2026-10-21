@@ -139,7 +139,7 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-    public void RangedAttackAnim() => Anim.Play("EnemyRangedAttack");
+    public void RangedAttackAnim() => Anim.SetTrigger("RangedAtk");
     public void RangedAttack()
     {
         Vector3 direction = (Player.position - projectileSpawn.position).normalized;
