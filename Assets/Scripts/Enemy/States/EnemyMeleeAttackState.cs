@@ -12,7 +12,7 @@ public class EnemyMeleeAttackState : EnemyState
         stepInTimer = config.StepInDuration;
         enemy.ConsumeAttack();
         enemy.StepIn(config.StepInSpeed, enemy.TargetDirection);
-     //   enemy.BasicAttack();
+        enemy.BasicAttack();
     }
     public override void Update() => stepInTimer -= Time.deltaTime;
     public override void FixedUpdate()
