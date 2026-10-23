@@ -81,12 +81,30 @@ public class Enemy : MonoBehaviour
         if(targetDirection != Vector3.zero) 
             transform.rotation = Quaternion.LookRotation(targetDirection);
     }
-    public void StopMovement() => RigidBody.linearVelocity = new Vector3(0, RigidBody.linearVelocity.y, 0);
+    public void StopMovement()
+    {
+        RigidBody.linearVelocity = new Vector3(0, RigidBody.linearVelocity.y, 0);
+
+        // Immediately tell the animator the NPC has stopped moving
+        Anim.SetBool("IsWalking", false);
+        Anim.SetFloat("Speed", 0f);
+        Anim.SetFloat("MovX", 0f);
+        Anim.SetFloat("MovZ", 0f);
+    }
+
     public void ChaseTarget(float speed)
     {
         RigidBody.linearVelocity = new Vector3(targetDirection.x * speed, RigidBody.linearVelocity.y, targetDirection.z * speed);
 
-        Anim.SetFloat("Speed", RigidBody.linearVelocity.magnitude);
+        // Calculate only the horizontal speed (ignoring Y/gravity)
+        float horizontalSpeed = new Vector2(RigidBody.linearVelocity.x, RigidBody.linearVelocity.z).magnitude;
+
+        // Check if the NPC is moving past a small threshold
+        bool isMoving = horizontalSpeed > 0.1f;
+
+        // Send the boolean and float data to the Animator
+        Anim.SetBool("IsWalking", isMoving);
+        Anim.SetFloat("Speed", horizontalSpeed);
         Anim.SetFloat("MovX", RigidBody.linearVelocity.x);
         Anim.SetFloat("MovZ", RigidBody.linearVelocity.z);
     }
@@ -95,6 +113,14 @@ public class Enemy : MonoBehaviour
     {
         Vector3 rightDirection = Vector3.Cross(Vector3.up, targetDirection);
         RigidBody.linearVelocity = new Vector3(rightDirection.x * speed, RigidBody.linearVelocity.y, rightDirection.z * speed);
+
+        float horizontalSpeed = new Vector2(RigidBody.linearVelocity.x, RigidBody.linearVelocity.z).magnitude;
+        bool isMoving = horizontalSpeed > 0.1f;
+
+        Anim.SetBool("IsWalking", isMoving);
+        Anim.SetFloat("Speed", horizontalSpeed);
+        Anim.SetFloat("MovX", RigidBody.linearVelocity.x);
+        Anim.SetFloat("MovZ", RigidBody.linearVelocity.z);
     }
     public void StepIn(float speed, Vector3 direction) => RigidBody.linearVelocity = new Vector3(direction.x * speed, RigidBody.linearVelocity.y, direction.z * speed);
     
