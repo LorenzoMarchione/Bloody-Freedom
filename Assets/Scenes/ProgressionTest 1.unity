@@ -1265,6 +1265,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1367563982}
+    - target: {fileID: 4961613966370534947, guid: e7d1475ff79f6274db6f60891dd2ac0b, type: 3}
+      propertyPath: killAllEnemiesObjective
+      value: 
+      objectReference: {fileID: 1259992630}
     - target: {fileID: 7002130667440628939, guid: e7d1475ff79f6274db6f60891dd2ac0b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -47.371723
@@ -4614,7 +4618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &793939965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4878,7 +4882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &824078966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5141,6 +5145,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4650562391557932372, guid: 59c9d96cd55d1ca468b67ede8ac80bc2, type: 3}
+      propertyPath: killAllEnemiesObjective
+      value: 
+      objectReference: {fileID: 1259992630}
     - target: {fileID: 5430023050467690126, guid: 59c9d96cd55d1ca468b67ede8ac80bc2, type: 3}
       propertyPath: player
       value: 
@@ -7867,6 +7875,64 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1259992629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259992631}
+  - component: {fileID: 1259992630}
+  - component: {fileID: 1259992632}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1259992630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259992629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1f07fcb4befce4fb95288673ddb290, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KillAllEnemiesObjective
+--- !u!4 &1259992631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259992629}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -42.73069, y: 1.98858, z: -27.20878}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1259992632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259992629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae278438eb8db0c448a5501d2ea2919e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  objective: {fileID: 1259992630}
 --- !u!43 &1283400913
 Mesh:
   m_ObjectHideFlags: 0
@@ -14353,6 +14419,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1698631555}
   - {fileID: 1526389242}
+  - {fileID: 1259992631}
   - {fileID: 793939966}
   - {fileID: 824078967}
   - {fileID: 1367563982}
