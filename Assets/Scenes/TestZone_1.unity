@@ -8783,7 +8783,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
-  hitbox: {fileID: 6579210423528201285, guid: 4cdd3526bc5ffaa42bb1874e3ba04d6e, type: 3}
+  hitboxPrefab: {fileID: 0}
   effectDuration: 0.2
 --- !u!1 &1370835151
 GameObject:
@@ -10274,6 +10274,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 100
   currentHealth: 100
+--- !u!114 &1454596903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454596887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78e19830a481984d821b4386a8f4230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  damage: 25
+  attackRange: 1.5
+  attackBoxSize: {x: 1, y: 3, z: 1}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  hitboxPrefab: {fileID: 0}
+  effectDuration: 0.2
 --- !u!1 &1465377707
 GameObject:
   m_ObjectHideFlags: 0
@@ -14623,6 +14643,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3439377691333711656, guid: 42a14a385c626c04c803ef2cd7be3efd, type: 3}
+      propertyPath: m_Center.y
+      value: 1.085
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14633,6 +14657,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2430788087137848953, guid: 42a14a385c626c04c803ef2cd7be3efd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1454596898}
+    - targetCorrespondingSourceObject: {fileID: 2430788087137848953, guid: 42a14a385c626c04c803ef2cd7be3efd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1454596903}
   m_SourcePrefab: {fileID: 100100000, guid: 42a14a385c626c04c803ef2cd7be3efd, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

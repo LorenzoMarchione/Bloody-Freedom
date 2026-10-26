@@ -72,9 +72,12 @@ public class Enemy : MonoBehaviour
     //Movement and direction functions
     public void SetTargetDirection()
     {
-        Vector3 direction = Player.transform.position - transform.position;
-        direction.y = 0;
-        targetDirection = direction.normalized;
+        if (Player != null)
+        {
+            Vector3 direction = Player.transform.position - transform.position;
+            direction.y = 0;
+            targetDirection = direction.normalized;
+        }
     }
     public void FaceTarget()
     {
