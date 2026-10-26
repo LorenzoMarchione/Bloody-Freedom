@@ -8,12 +8,15 @@ public class EnemyRangedAttackState : EnemyState
     {
         base.Enter();
 
+        enemy.StopMovement();
+
         enemy.ConsumeAttack();
         enemy.RangedAttackAnim();
     }
-    public override void OnAnimationFinished()
+    public override void FixedUpdate()
     {
-        enemy.RangedAttack();
-        stateMachine.ChangeState(enemy.PositionState);
+        enemy.FaceTarget();
     }
+    public override void OnAnimationTrigger() => enemy.RangedAttack();
+    public override void OnAnimationFinished() => stateMachine.ChangeState(enemy.PositionState);
 }
