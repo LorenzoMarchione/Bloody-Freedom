@@ -31,10 +31,10 @@ public class EnemyPositioningState : EnemyState
 
         if (senses.TargetRange(config.ExitDistanceRange) != TargetRangeStatus.InRange)
             stateMachine.ChangeState(enemy.ChaseState);
-        else if (CanAttack() && senses.GetSqrDistanceFromTarget() < (config.RangedRange * config.RangedRange))
-            stateMachine.ChangeState(enemy.RangedAttackState);
         else if (CanAttack() && senses.GetSqrDistanceFromTarget() < (config.MeleeRange * config.MeleeRange))
             stateMachine.ChangeState(enemy.MeleeAttackState);
+        else if (CanAttack() && senses.GetSqrDistanceFromTarget() < (config.RangedRange * config.RangedRange))
+            stateMachine.ChangeState(enemy.RangedAttackState);
     }
     public override void FixedUpdate()
     {
