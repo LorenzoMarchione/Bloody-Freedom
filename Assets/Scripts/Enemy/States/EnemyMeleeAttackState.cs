@@ -9,6 +9,8 @@ public class EnemyMeleeAttackState : EnemyState
     {
         base.Enter();
 
+        enemy.StopMovement();
+
         stepInTimer = config.StepInDuration;
         enemy.ConsumeAttack();
         enemy.StepIn(config.StepInSpeed, enemy.TargetDirection);
