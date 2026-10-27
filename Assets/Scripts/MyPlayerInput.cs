@@ -17,7 +17,7 @@ public class MyPlayerInput : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
     [SerializeField] private Transform cameraRoot;
     [SerializeField] private float cameraSensitivity = 1f;
-    [SerializeField] private float movementSmooth =5f;
+   // [SerializeField] private float movementSmooth =5f;
     private float cameraYaw;
     private float cameraPitch;
     private CharacterController characterController;
