@@ -8,7 +8,7 @@ public class HealthBarUI : MonoBehaviour
 
     private void OnEnable()
     {
-        playerHealth.OnHealthChanged += UpdateHealthBar;
+        playerHealth.OnHealthAmount += UpdateHealthBar;
     }
 
     private void Start()
@@ -21,13 +21,13 @@ public class HealthBarUI : MonoBehaviour
 
     private void OnDisable()
     {
-        playerHealth.OnHealthChanged -= UpdateHealthBar;
+        playerHealth.OnHealthAmount -= UpdateHealthBar;
     }
 
-    private void UpdateHealthBar(float currentHealth, float maxHealth)
+    private void UpdateHealthBar(int currentHealth, int maxHealth)
     {
         healthSlider.value = maxHealth > 0
-            ? currentHealth / maxHealth
+            ? (float)currentHealth / maxHealth
             : 0f;
     }
 }
