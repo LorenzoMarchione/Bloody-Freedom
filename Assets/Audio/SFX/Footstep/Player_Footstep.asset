@@ -100,9 +100,9 @@ AudioRandomContainer:
   m_Volume: 0
   m_Pitch: 0
   m_AutomaticTriggerTime: 0
-  m_LoopCount: 4
-  m_VolumeRandomizationRange: {x: -3, y: 3.404255}
-  m_PitchRandomizationRange: {x: -102.127655, y: 102.127655}
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: -11.421054, y: 0}
+  m_PitchRandomizationRange: {x: -156.263, y: 535.2104}
   m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
   m_LoopCountRandomizationRange: {x: -3, y: 2}
   m_Elements:
@@ -120,11 +120,11 @@ AudioRandomContainer:
   m_PlaybackMode: 2
   m_TriggerMode: 1
   m_AutomaticTriggerMode: 1
-  m_LoopMode: 2
+  m_LoopMode: 1
   m_VolumeRandomizationEnabled: 1
   m_PitchRandomizationEnabled: 1
   m_AutomaticTriggerTimeRandomizationEnabled: 0
-  m_LoopCountRandomizationEnabled: 1
+  m_LoopCountRandomizationEnabled: 0
 --- !u!1233149941 &7730296978195637176
 AudioContainerElement:
   m_ObjectHideFlags: 1
