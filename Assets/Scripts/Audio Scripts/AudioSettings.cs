@@ -23,7 +23,7 @@ public class AudioSettings : MonoBehaviour
 
     [Header("Scene Settings")]
     [Tooltip("Type the exact name of your Main Menu scene here.")]
-    [SerializeField] private string mainMenuSceneName = "MainMenu"; // Change this to your actual main menu scene name!
+    [SerializeField] private string mainMenuSceneName = "NewMainMenu"; // Change this to your actual main menu scene name!
 
     // These match the exposed parameter names in your Audio Mixer
     private const string MusicParam = "MusicVolume";
