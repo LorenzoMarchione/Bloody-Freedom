@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class KillAllEnemiesObjective : LevelObjective
 {
-    [SerializeField] private int totalEnemies = 10;
+    private int totalEnemies = 0;
 
-    private int killedEnemies;
+    private int killedEnemies = 0;
 
     public override string Description => "Elimina a todos los enemigos";
 

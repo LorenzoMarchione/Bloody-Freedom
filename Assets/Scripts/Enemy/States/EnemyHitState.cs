@@ -9,7 +9,6 @@ public class EnemyHitState : EnemyState
     {
         base.Enter();
 
-        Debug.Log("Recoil");
         recoilTimer = config.RecoilDuration;
         enemy.StepIn(config.RecoilSpeed, -enemy.TargetDirection);
         enemy.BasicAttack();
