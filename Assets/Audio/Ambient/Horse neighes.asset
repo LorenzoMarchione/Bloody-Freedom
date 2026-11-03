@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-390283315768306646
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Horse neighing 1_{-390283315768306646}
+  m_AudioClip: {fileID: 8300000, guid: 8d597be493caa40f9b6171c791b689fe, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &4289155464427882421
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Horse neighing 3_{4289155464427882421}
+  m_AudioClip: {fileID: 8300000, guid: 51e49468b775d4a8a81184df626fb051, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Horse neighes
+  m_Volume: -9.1
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 5
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: -324.8121, y: 180.45134}
+  m_AutomaticTriggerTimeRandomizationRange: {x: -2.7067678, y: 1}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: -390283315768306646}
+  - {fileID: 6612326202855056463}
+  - {fileID: 4289155464427882421}
+  m_AvoidRepeatingLast: 1
+  m_PlaybackMode: 2
+  m_TriggerMode: 1
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 0
+  m_VolumeRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 1
+  m_AutomaticTriggerTimeRandomizationEnabled: 1
+  m_LoopCountRandomizationEnabled: 0
+--- !u!1233149941 &6612326202855056463
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Horse neighing 2_{6612326202855056463}
+  m_AudioClip: {fileID: 8300000, guid: 60c0b7783112943c78229e1941fc423d, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
