@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-8778913300765927052
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: footsteps_dirt_5_{-8778913300765927052}
+  m_AudioClip: {fileID: 8300000, guid: ada05b0fe806952478efea125ae2a4f2, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-2632657860536675106
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: footsteps_dirt_3_{-2632657860536675106}
+  m_AudioClip: {fileID: 8300000, guid: 2d4cc784323ee6c48b1572c36ae3100c, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &5104414606496676242
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: footsteps_dirt_4_{5104414606496676242}
+  m_AudioClip: {fileID: 8300000, guid: 6f155c8f1b9782745bf50e0c93423ad7, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &6203224514420455688
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: footstep_dirt_2_{6203224514420455688}
+  m_AudioClip: {fileID: 8300000, guid: ad42f16b3d5add2468a47a12832a656a, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_FootStep_dirt
+  m_Volume: -10
+  m_Pitch: 500
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: -2, y: 2}
+  m_PitchRandomizationRange: {x: 0, y: 500}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: 6203224514420455688}
+  - {fileID: 9094225943443584967}
+  - {fileID: -2632657860536675106}
+  - {fileID: 5104414606496676242}
+  - {fileID: -8778913300765927052}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 2
+  m_TriggerMode: 0
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 2
+  m_VolumeRandomizationEnabled: 1
+  m_PitchRandomizationEnabled: 1
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0
+--- !u!1233149941 &9094225943443584967
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: footsteps_dirt_1_{9094225943443584967}
+  m_AudioClip: {fileID: 8300000, guid: 293c179d0fb3e374dba092115fbcf3d6, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
