@@ -7,6 +7,9 @@ public class PlayerData : MonoBehaviour
     [Header("Player Status")]
     public bool hasEquipment = false;
 
+    [SerializeField] GameObject player;
+    [SerializeField] GameObject sword;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -17,6 +20,10 @@ public class PlayerData : MonoBehaviour
     public void GrantEquipment()
     {
         hasEquipment = true;
+
+        player.GetComponent<Animator>().SetLayerWeight(1, 1f);
+        sword.GetComponent<MeshRenderer>().enabled = true;
+
         Debug.Log("Equipment granted to player!");
     }
 }
