@@ -20,7 +20,7 @@ MonoBehaviour:
   choices:
   - choiceText: Yes
     nextDialogue: {fileID: 11400000, guid: 876d1388abd47c34190366b0c0783162, type: 2}
-    sceneToLoad: NewMainMenu
+    sceneToLoad: Level 1.1
     requiresEquipmentCheck: 1
     failedEquipmentDialogue: {fileID: 11400000, guid: 10a2af54a181e6a44a553b027280b779, type: 2}
     grantsEquipment: 0
