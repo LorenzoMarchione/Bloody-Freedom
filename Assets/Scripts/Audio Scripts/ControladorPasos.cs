@@ -1,38 +1,90 @@
+
 using UnityEngine;
 
 public class ControladorPasos : MonoBehaviour
 {
+    [Header("Animator")]
     public Animator animator;
-    // Referencia al Audio Random Container o AudioSource que configuraste
-    public AudioSource audioSourcePasos;
 
-    [Header("Configuración de pasos")]
-    public float intervaloPasos = 0.5f; // Tiempo entre paso y paso al caminar
+    [Header("Audio Sources")]
+    public AudioSource audioConcreto;
+    public AudioSource audioTierra;
+    public AudioSource audioMadera;
+
+    [Header("Deteccion del suelo")]
+    public Transform puntoSuelo;
+    public float distanciaSuelo = 0.5f;
+    public LayerMask capasSuelo;
+
+    [Header("Configuracion de pasos")]
+    public float intervaloPasos = 0.5f;
+
     private float temporizador;
 
     void Update()
     {
-        // Obtenemos el valor del parámetro "speed" del Animator
-        float velocidadActual = animator.GetFloat("Speed");
+        if (animator == null || puntoSuelo == null)
+            return;
 
-        // Si el personaje se está moviendo (speed mayor a un umbral pequeño)
-        if (velocidadActual > 0.1f)
+        if (animator.GetFloat("Speed") > 0.1f)
         {
             temporizador -= Time.deltaTime;
 
             if (temporizador <= 0f)
             {
-                // Reproduce el sonido (si usas el Audio Random Container o AudioSource)
-                audioSourcePasos.Play();
-
-                // Reinicia el temporizador (puedes acortarlo si corre más rápido basándote en la velocidad)
+                DetectarSuelo();
                 temporizador = intervaloPasos;
             }
         }
         else
         {
-            // Si está quieto, reiniciamos el temporizador para que suene de inmediato al volver a caminar
             temporizador = 0f;
         }
     }
+
+    void DetectarSuelo()
+    {
+        Debug.DrawRay(
+            puntoSuelo.position,
+            Vector3.down * distanciaSuelo,
+            Color.red,
+            1f
+        );
+
+        if (Physics.Raycast(
+            puntoSuelo.position,
+            Vector3.down,
+            out RaycastHit hit,
+            distanciaSuelo,
+            capasSuelo))
+        {
+            int layerDetectado = hit.collider.gameObject.layer;
+
+            if (layerDetectado == LayerMask.NameToLayer("Concreto"))
+            {
+                if (audioConcreto != null)
+                {
+                    audioConcreto.Play();
+                   // Debug.Log("Paso sobre CONCRETO");
+                }
+            }
+            else if (layerDetectado == LayerMask.NameToLayer("Tierra"))
+            {
+                if (audioTierra != null)
+                {
+                    audioTierra.Play();
+                   // Debug.Log("Paso sobre TIERRA");
+                }
+            }
+            else if (layerDetectado == LayerMask.NameToLayer("Madera"))
+            {
+                if (audioMadera != null)
+                {
+                    audioMadera.Play();
+                   // Debug.Log("Paso sobre MADERA");
+                }
+            }
+        }
+    }
 }
+

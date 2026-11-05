@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751b566f4b3fc62489cacf986236e779, type: 3}
+  m_Name: Shop_Greatsword
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  speakerName: Shopkeeper
+  sentences:
+  - All i have for now its a greatsword, would you like to buy it? Its only 5 gold!
+  voiceClips: []
+  choices:
+  - choiceText: Here you go (-5 G)
+    nextDialogue: {fileID: 11400000, guid: 268ca67df5b2f3e4c96858d3367c1f23, type: 2}
+    sceneToLoad: 
+    requiresEquipmentCheck: 0
+    failedEquipmentDialogue: {fileID: 0}
+    grantsEquipment: 1
+  - choiceText: Not sure...
+    nextDialogue: {fileID: 11400000, guid: 1403160d728af0c4d9f769bfdc9e2549, type: 2}
+    sceneToLoad: 
+    requiresEquipmentCheck: 0
+    failedEquipmentDialogue: {fileID: 0}
+    grantsEquipment: 0

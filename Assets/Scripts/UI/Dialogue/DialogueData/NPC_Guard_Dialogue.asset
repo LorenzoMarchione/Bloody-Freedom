@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 751b566f4b3fc62489cacf986236e779, type: 3}
+  m_Name: NPC_Guard_Dialogue
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  speakerName: Guard
+  sentences:
+  - Are you ready to fight?
+  voiceClips:
+  - {fileID: 8300000, guid: 3aea4fa0d8b8fa04fa7a33730c91921f, type: 3}
+  choices:
+  - choiceText: Yes
+    nextDialogue: {fileID: 11400000, guid: 876d1388abd47c34190366b0c0783162, type: 2}
+    sceneToLoad: Level 1.1
+    requiresEquipmentCheck: 1
+    failedEquipmentDialogue: {fileID: 11400000, guid: 10a2af54a181e6a44a553b027280b779, type: 2}
+    grantsEquipment: 0
+  - choiceText: No
+    nextDialogue: {fileID: 11400000, guid: 3f3b8957324d9f241be395a3534e3b89, type: 2}
+    sceneToLoad: Level 1.1
+    requiresEquipmentCheck: 0
+    failedEquipmentDialogue: {fileID: 0}
+    grantsEquipment: 0

@@ -14,4 +14,7 @@ public class EnemyRegister : MonoBehaviour
             killAllEnemiesObjective.RegisterEnemy(); 
     }
     private void HandleDeath() => killAllEnemiesObjective.EnemyKilled();
+
+
+
 }

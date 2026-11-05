@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
 {
     //components
     public Health Health {  get; private set; }
+    public EnemyAttackAudio AttackAudio { get; private set; }
     public EnemyStateMachine StateMachine { get; private set; }
     public EnemySenses Senses { get; private set; }
     public EnemyConfig EnemyConfig { get => EConfig; }
@@ -34,6 +35,7 @@ public class Enemy : MonoBehaviour
 
         Health = GetComponent<Health>();
         Senses = GetComponent<EnemySenses>();
+        AttackAudio = GetComponent<EnemyAttackAudio>();
 
         RigidBody = GetComponent<Rigidbody>();
         Anim = GetComponent<Animator>();
@@ -145,13 +147,23 @@ public class Enemy : MonoBehaviour
         Vector3 direction = (Player.position - projectileSpawn.position).normalized;
         Quaternion rotation = Quaternion.LookRotation(direction) * Quaternion.Euler(90f, 0f, 0f);
 
-        Projectile projectile = Instantiate(EnemyConfig.ProjectilePrefab, projectileSpawn.position, rotation).GetComponent<Projectile>();
+        Projectile projectile = Instantiate(
+            EnemyConfig.ProjectilePrefab,
+            projectileSpawn.position,
+            rotation
+        ).GetComponent<Projectile>();
 
-        projectile.Initialize(direction, EnemyConfig.ProjectileSpeed, EnemyConfig.ProjectileDamage);
+        projectile.Initialize(
+            direction,
+            EnemyConfig.ProjectileSpeed,
+            EnemyConfig.ProjectileDamage
+        );
+
+        AttackAudio?.PlayRangedAttackSound();
     }
 
     //Extra Functions
-    public void DestroySelf() => Destroy(gameObject);
+    public void DestroySelf() => Destroy(gameObject, 3f);
 
     //Gizmos
     public void OnDrawGizmosSelected()

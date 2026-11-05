@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-8725930285152041426
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Step_wood_5_{-8725930285152041426}
+  m_AudioClip: {fileID: 8300000, guid: 1e2d8e09a39b3c9439bc7d684c133e72, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-6687981599977505211
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Step_wood_1_{-6687981599977505211}
+  m_AudioClip: {fileID: 8300000, guid: e01cb373c2c79184b9baa8611776d9b3, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-3502211035490785312
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Step_wood_2_{-3502211035490785312}
+  m_AudioClip: {fileID: 8300000, guid: 35628343ae2538c42972fafed5bb3fed, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &3411496727185870004
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Step_wood_3_{3411496727185870004}
+  m_AudioClip: {fileID: 8300000, guid: 1ed7bfab2cc18544e8f13b8af395df2f, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Player_FootSteps_Wood
+  m_Volume: -10
+  m_Pitch: 500
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: -2, y: 2}
+  m_PitchRandomizationRange: {x: 0, y: 500}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: -6687981599977505211}
+  - {fileID: -3502211035490785312}
+  - {fileID: 3411496727185870004}
+  - {fileID: 7317621704840024260}
+  - {fileID: -8725930285152041426}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 2
+  m_TriggerMode: 0
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 2
+  m_VolumeRandomizationEnabled: 1
+  m_PitchRandomizationEnabled: 1
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0
+--- !u!1233149941 &7317621704840024260
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Step_wood_4_{7317621704840024260}
+  m_AudioClip: {fileID: 8300000, guid: 47de881b59408364497f72194cad8a79, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
