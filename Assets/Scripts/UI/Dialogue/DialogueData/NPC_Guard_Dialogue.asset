@@ -16,7 +16,7 @@ MonoBehaviour:
   sentences:
   - Are you ready to fight?
   voiceClips:
-  - {fileID: 8300000, guid: 3aea4fa0d8b8fa04fa7a33730c91921f, type: 3}
+  - {fileID: 8300000, guid: c9091cc59708a1349b58139da1b19999, type: 3}
   choices:
   - choiceText: Yes
     nextDialogue: {fileID: 11400000, guid: 876d1388abd47c34190366b0c0783162, type: 2}
@@ -26,7 +26,7 @@ MonoBehaviour:
     grantsEquipment: 0
   - choiceText: No
     nextDialogue: {fileID: 11400000, guid: 3f3b8957324d9f241be395a3534e3b89, type: 2}
-    sceneToLoad: Level 1.1
+    sceneToLoad: 
     requiresEquipmentCheck: 0
     failedEquipmentDialogue: {fileID: 0}
     grantsEquipment: 0

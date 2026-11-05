@@ -15,4 +15,6 @@ MonoBehaviour:
   speakerName: Guard
   sentences:
   - You cannot go outside until you earn your freedom. Get lost.
+  voiceClips:
+  - {fileID: 8300000, guid: 2bc166875814e604caad5c4f4eed33b1, type: 3}
   choices: []
