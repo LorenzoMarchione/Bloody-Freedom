@@ -82,6 +82,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2129695530223274669, guid: 1e8f0c1e04ed5994ca3bba9782cad89a, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -3021805766152425662, guid: 60a003c11d778664886b00a12638da22, type: 2}
     - target: {fileID: 4332217972269348855, guid: 1e8f0c1e04ed5994ca3bba9782cad89a, type: 3}
       propertyPath: maxHealth
       value: 50
@@ -170,6 +174,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7422144516331876194, guid: 1e8f0c1e04ed5994ca3bba9782cad89a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7503528430733126095}
+    - targetCorrespondingSourceObject: {fileID: 7422144516331876194, guid: 1e8f0c1e04ed5994ca3bba9782cad89a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6241375052764529352}
   m_SourcePrefab: {fileID: 100100000, guid: 1e8f0c1e04ed5994ca3bba9782cad89a, type: 3}
 --- !u!1 &227769343925726706 stripped
 GameObject:
@@ -201,11 +208,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyRegister
   killAllEnemiesObjective: {fileID: 0}
+--- !u!114 &6241375052764529352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227769343925726706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29510f0ea78a5554e82730e347190a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAudio
+  health: {fileID: 6356500286547490151}
+  hitSounds:
+  - {fileID: 8300000, guid: 9a62f3fab66aef443a8dbeeb7002266b, type: 3}
+  - {fileID: 8300000, guid: 52777b9f1e494134dbf2665082368fe5, type: 3}
+  - {fileID: 8300000, guid: 5a8adb7d39fd4e0448d879b91abe74df, type: 3}
+  - {fileID: 8300000, guid: 06083143d7a1db64097df792d95c5ed0, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: 1cd77858ca9cb77438fc5b37640137d6, type: 3}
 --- !u!4 &604295638260840264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7803350233892746712, guid: 1e8f0c1e04ed5994ca3bba9782cad89a, type: 3}
   m_PrefabInstance: {fileID: 7217566096905831056}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6356500286547490151 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4332217972269348855, guid: 1e8f0c1e04ed5994ca3bba9782cad89a, type: 3}
+  m_PrefabInstance: {fileID: 7217566096905831056}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227769343925726706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b8b1c452f802644a86bd1bf6356fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
 --- !u!1001 &7345928228851411017
 PrefabInstance:
   m_ObjectHideFlags: 0

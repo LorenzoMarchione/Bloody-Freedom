@@ -6,7 +6,7 @@ public class SurviveObjective : LevelObjective
 
     private float elapsedTime;
 
-    public override string Description => "Sobrevive";
+    public override string Description => "Survive";
 
     public override string ProgressText =>
         $"{FormatTime(elapsedTime)} / {FormatTime(duration)}";

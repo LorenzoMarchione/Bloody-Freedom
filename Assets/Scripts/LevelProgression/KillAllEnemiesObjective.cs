@@ -6,7 +6,7 @@ public class KillAllEnemiesObjective : LevelObjective
 
     private int killedEnemies = 0;
 
-    public override string Description => "Elimina a todos los enemigos";
+    public override string Description => "Defeat all enemies";
 
     public override string ProgressText =>
         $"{killedEnemies}/{totalEnemies}";
