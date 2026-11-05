@@ -6847,7 +6847,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1944878207}
   - component: {fileID: 1944878206}
-  - component: {fileID: 1944878208}
   m_Layer: 0
   m_Name: ProgressionManager
   m_TagString: Untagged
@@ -6869,7 +6868,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ProgressionManager
   levels:
   - Terrain_2.1.1
-  - Level 1.1
+  - Level 1.2
+  - Level 1.3
+  - Level 1.4
   victoryScene: NewMainMenu
 --- !u!4 &1944878207
 Transform:
@@ -6886,20 +6887,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1944878208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944878204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae278438eb8db0c448a5501d2ea2919e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
-  objective: {fileID: 0}
-  objectiveUI: {fileID: 0}
 --- !u!1 &1960628718
 GameObject:
   m_ObjectHideFlags: 0
