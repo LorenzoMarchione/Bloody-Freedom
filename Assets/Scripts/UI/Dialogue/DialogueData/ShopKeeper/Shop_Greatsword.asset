@@ -15,7 +15,8 @@ MonoBehaviour:
   speakerName: Shopkeeper
   sentences:
   - All i have for now its a greatsword, would you like to buy it? Its only 5 gold!
-  voiceClips: []
+  voiceClips:
+  - {fileID: 8300000, guid: eeeb35a535ffda34cb913859df29554a, type: 3}
   choices:
   - choiceText: Here you go (-5 G)
     nextDialogue: {fileID: 11400000, guid: 268ca67df5b2f3e4c96858d3367c1f23, type: 2}

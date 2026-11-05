@@ -15,5 +15,6 @@ MonoBehaviour:
   speakerName: Guard
   sentences:
   - Come here when you are ready.
-  voiceClips: []
+  voiceClips:
+  - {fileID: 8300000, guid: 9899d3a6ea76c41409e2830783ea7cd9, type: 3}
   choices: []

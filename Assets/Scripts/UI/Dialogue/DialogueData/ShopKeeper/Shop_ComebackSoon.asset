@@ -15,4 +15,6 @@ MonoBehaviour:
   speakerName: Shopkeeper
   sentences:
   - Come back soon!
+  voiceClips:
+  - {fileID: 8300000, guid: 88bfd28618d10ba489e10b3c9d80e80b, type: 3}
   choices: []

@@ -15,5 +15,6 @@ MonoBehaviour:
   speakerName: Shopkeeper
   sentences:
   - A pleasure to trade with ya!
-  voiceClips: []
+  voiceClips:
+  - {fileID: 8300000, guid: 6511324c42539e346bc3e2a048f60e86, type: 3}
   choices: []
