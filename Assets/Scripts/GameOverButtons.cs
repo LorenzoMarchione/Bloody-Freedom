@@ -5,7 +5,7 @@ public class GameOverButtons : MonoBehaviour
 {
     public void VolverAlMenu()
     {
-        SceneManager.LoadScene("NewMainMenu_David" +
+        SceneManager.LoadScene("NewMainMenu" +
             "");
     }
 }
