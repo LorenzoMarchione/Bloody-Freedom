@@ -2,18 +2,37 @@ using UnityEngine;
 
 public class KillAllEnemiesObjective : LevelObjective
 {
-    private int remainingEnemies;
+    private int totalEnemies = 0;
 
-    public void RegisterEnemy()
-    {
-        remainingEnemies++;
-    }
+    private int killedEnemies = 0;
+
+    public override string Description => "Elimina a todos los enemigos";
+
+    public override string ProgressText =>
+        $"{killedEnemies}/{totalEnemies}";
+
+    public override float Progress =>
+        totalEnemies > 0
+            ? (float)killedEnemies / totalEnemies
+            : 0f;
 
     public void EnemyKilled()
     {
-        remainingEnemies--;
+        if (isCompleted)
+            return;
 
-        if (remainingEnemies <= 0)
+        killedEnemies++;
+
+        if (killedEnemies >= totalEnemies)
+        {
             Complete();
+            return;
+        }
+
+        NotifyProgressChanged();
+    }
+    public void RegisterEnemy()
+    {
+        totalEnemies++;
     }
 }
