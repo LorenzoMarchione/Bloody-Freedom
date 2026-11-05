@@ -16,5 +16,7 @@ MonoBehaviour:
   sentences:
   - You dont have any equipment!
   - Go talk to the shopkeeper and buy something to fight.
-  voiceClips: []
+  voiceClips:
+  - {fileID: 8300000, guid: c26facd6a87abf74fa057709dd7aeafa, type: 3}
+  - {fileID: 8300000, guid: e0302d6f2aefb7746a6914339ef338bf, type: 3}
   choices: []

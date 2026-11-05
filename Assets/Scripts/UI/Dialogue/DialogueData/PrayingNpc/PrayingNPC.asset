@@ -16,4 +16,7 @@ MonoBehaviour:
   sentences:
   - Oh my god... I dont know how I ended up here...
   - I don't think I will survive another fight...
+  voiceClips:
+  - {fileID: 8300000, guid: 1768085e083de4340965868b947a28c4, type: 3}
+  - {fileID: 8300000, guid: 038a67c0f28bda340b127747b9fa8cbb, type: 3}
   choices: []
