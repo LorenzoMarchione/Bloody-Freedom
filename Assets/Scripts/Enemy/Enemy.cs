@@ -151,7 +151,7 @@ public class Enemy : MonoBehaviour
     }
 
     //Extra Functions
-    public void DestroySelf() => Destroy(gameObject);
+    public void DestroySelf() => Destroy(gameObject, 3f);
 
     //Gizmos
     public void OnDrawGizmosSelected()
