@@ -31,7 +31,7 @@ public class ProgressionManager : MonoBehaviour
 
     private void LoadCurrentLevel()
     {
-        SceneManager.LoadScene(levels[currentLevelIndex]);
+      ///  SceneManager.LoadScene(levels[currentLevelIndex]);
     }
 
     public void CompleteLevel()

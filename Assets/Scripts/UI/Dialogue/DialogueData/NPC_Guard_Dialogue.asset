@@ -26,7 +26,7 @@ MonoBehaviour:
     grantsEquipment: 0
   - choiceText: No
     nextDialogue: {fileID: 11400000, guid: 3f3b8957324d9f241be395a3534e3b89, type: 2}
-    sceneToLoad: 
+    sceneToLoad: Level 1.1
     requiresEquipmentCheck: 0
     failedEquipmentDialogue: {fileID: 0}
     grantsEquipment: 0

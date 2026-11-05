@@ -65,7 +65,7 @@ public class ControladorPasos : MonoBehaviour
                 if (audioConcreto != null)
                 {
                     audioConcreto.Play();
-                    Debug.Log("Paso sobre CONCRETO");
+                   // Debug.Log("Paso sobre CONCRETO");
                 }
             }
             else if (layerDetectado == LayerMask.NameToLayer("Tierra"))
@@ -73,7 +73,7 @@ public class ControladorPasos : MonoBehaviour
                 if (audioTierra != null)
                 {
                     audioTierra.Play();
-                    Debug.Log("Paso sobre TIERRA");
+                   // Debug.Log("Paso sobre TIERRA");
                 }
             }
             else if (layerDetectado == LayerMask.NameToLayer("Madera"))
@@ -81,7 +81,7 @@ public class ControladorPasos : MonoBehaviour
                 if (audioMadera != null)
                 {
                     audioMadera.Play();
-                    Debug.Log("Paso sobre MADERA");
+                   // Debug.Log("Paso sobre MADERA");
                 }
             }
         }
