@@ -15188,6 +15188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   objective: {fileID: 890026770}
+  objectiveUI: {fileID: 0}
 --- !u!4 &890026772
 Transform:
   m_ObjectHideFlags: 0
