@@ -177,6 +177,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7422144516331876194, guid: 1e8f0c1e04ed5994ca3bba9782cad89a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6241375052764529352}
+    - targetCorrespondingSourceObject: {fileID: 7422144516331876194, guid: 1e8f0c1e04ed5994ca3bba9782cad89a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2050588087777076169}
   m_SourcePrefab: {fileID: 100100000, guid: 1e8f0c1e04ed5994ca3bba9782cad89a, type: 3}
 --- !u!1 &227769343925726706 stripped
 GameObject:
@@ -228,6 +231,25 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 06083143d7a1db64097df792d95c5ed0, type: 3}
   deathSounds:
   - {fileID: 8300000, guid: 1cd77858ca9cb77438fc5b37640137d6, type: 3}
+--- !u!114 &2050588087777076169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227769343925726706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 819595bde4c84c94cb3b19489254de06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttackAudio
+  rangedAttackSounds:
+  - {fileID: 8300000, guid: cfcff06836a34394980bcbda0b5ce8b8, type: 3}
+  - {fileID: 8300000, guid: 12d9815c4e697654696741460375faf7, type: 3}
+  - {fileID: 8300000, guid: 8e8d0aab58234df48ae0126a1cfd0ed9, type: 3}
+  - {fileID: 8300000, guid: 8bf6b42ea24c7d441839613210788fda, type: 3}
+  - {fileID: 8300000, guid: bab53911caf7895469977aa4f4dc97db, type: 3}
+  - {fileID: 8300000, guid: 98ef667313d720440b8adf49dd67f1b3, type: 3}
 --- !u!4 &604295638260840264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7803350233892746712, guid: 1e8f0c1e04ed5994ca3bba9782cad89a, type: 3}
