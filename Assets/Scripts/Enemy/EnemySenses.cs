@@ -23,6 +23,12 @@ public class EnemySenses : MonoBehaviour
     }
     public TargetRangeStatus TargetRange(float distanceRange)
     {
+        if (player == null)
+        {
+            // Retornamos un valor grande o infinito para que el enemigo 
+            // entienda que el objetivo ya no está a rango
+            return TargetRangeStatus.TooFar;
+        }
         float minDistance = config.TargetDistance - distanceRange;
         float maxDistance = config.TargetDistance + distanceRange;
 

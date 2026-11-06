@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-5454100642102909467
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: coin_1_{-5454100642102909467}
+  m_AudioClip: {fileID: 8300000, guid: 7ed6262a39271eb449ad84dc853af04f, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-1069925427189941353
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: coin2_{-1069925427189941353}
+  m_AudioClip: {fileID: 8300000, guid: 632e221977920bf4e848f2ebb717c30c, type: 3}
+  m_Volume: -7
+  m_Enabled: 1
+--- !u!1233149941 &5304229285155262746
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: coin3_{5304229285155262746}
+  m_AudioClip: {fileID: 8300000, guid: 3aea4fa0d8b8fa04fa7a33730c91921f, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Coins
+  m_Volume: 0
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: -3, y: 3.404255}
+  m_PitchRandomizationRange: {x: -102.127655, y: 102.127655}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: -3, y: 2}
+  m_Elements:
+  - {fileID: -5454100642102909467}
+  - {fileID: -1069925427189941353}
+  - {fileID: 5304229285155262746}
+  m_AvoidRepeatingLast: 1
+  m_PlaybackMode: 2
+  m_TriggerMode: 1
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 1
+  m_VolumeRandomizationEnabled: 1
+  m_PitchRandomizationEnabled: 1
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0
