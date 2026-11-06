@@ -29,8 +29,6 @@ public class HUDGameOver : MonoBehaviour
 
     private void AlMorir()
     {
-        if (muriendo) return;
-
         muriendo = true;
 
         // Recordar el nivel antes de abrir Game Over.
